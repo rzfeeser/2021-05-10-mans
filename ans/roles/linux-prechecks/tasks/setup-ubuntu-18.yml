@@ -1,0 +1,9 @@
+---
+# a series of asserts which ensure our state modifications of our ubuntu platform will be successful
+- name: Precheck - check for total memory on platform
+  assert:
+          that: ansible_memtotal_mb > 500   # ensure the target has more than 500 mb of ram
+
+- name: Precheck - check for avail block on platform
+  assert:
+          that: ansible_mounts[0].block_available >= 3000000
