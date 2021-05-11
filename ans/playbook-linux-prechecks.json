@@ -1,0 +1,16 @@
+[
+    {
+        "name": "Testing our new role",
+        "hosts": "localhost",
+        "connection": "local",
+        "gather_facts": "yes",
+        "tasks": [
+            {
+                "name": "run our generic linux prechecks",
+                "include_role": {
+                    "name": "linux-prechecks"
+                }
+            }
+        ]
+    }
+]

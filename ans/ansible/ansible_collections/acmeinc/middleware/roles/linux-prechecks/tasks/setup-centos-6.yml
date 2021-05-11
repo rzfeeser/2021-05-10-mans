@@ -1,0 +1,9 @@
+# these asserts would be specific to centos 6 platforms
+---
+- name: Ensure target in correct domain
+  assert:
+          that: ansible_dns[0].domain == "alta3.com"
+
+- name: Ensure OS architecture
+  assert:
+          that: ansible_architecture != "x86_64"
