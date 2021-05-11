@@ -1,0 +1,15 @@
+# This is an example playbook developed by the middleware team at acme inc
+# If you have problems with this playbook, open a ticket in our ticketing system with a copy of the error
+---
+- name: Testing our new role
+  hosts: localhost
+  connection: local
+  gather_facts: yes # we need this in order to complete our prechecks
+
+  #collections:
+  #        - acmeinc.middleware
+
+  tasks:
+          - name: run our generic linux prechecks
+            include_role:
+                    name: acmeinc.middleware.linux-prechecks
