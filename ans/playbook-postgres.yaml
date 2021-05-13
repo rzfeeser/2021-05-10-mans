@@ -1,0 +1,23 @@
+---
+- name: Interactions between Ansible and Postgresql
+  hosts: localhost   # our postgres instance is on the localhost
+  connection: local  # do not ssh to the location
+  gather_facts: no
+
+
+
+  tasks:
+          - name: Attempt to create a table
+            postgresql_table:
+                    name: thunderstorm # name of table to create
+                    db: testpython # name of database to connect to
+                    login_host: localhost # the host running the db
+                    login_password: qwerty # password to auth
+                    login_user: zach # defaults to 'postgres'
+                    state: present
+            register: results
+
+          - name: display the results
+            debug:
+                    var: results
+

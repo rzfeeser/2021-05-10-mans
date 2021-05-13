@@ -1,0 +1,10 @@
+---
+- name: simple playbook
+  hosts: all
+  connection: ssh
+  gather_facts: yes
+
+  tasks:
+          - name: debug facts
+            debug:
+                    var: ansible_facts
