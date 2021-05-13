@@ -1,0 +1,13 @@
+---
+- name: Playbook using custom module
+  hosts: localhost
+  connection: local
+  
+  collections:
+          - acmeinc.middleware
+
+  tasks:
+  - name: Pull Mars weather
+    nasa_mars_weather:
+      name: MarsWeatherReport   # the module adds *.txt to the file name
+
